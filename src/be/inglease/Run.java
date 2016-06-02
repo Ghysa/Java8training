@@ -53,7 +53,7 @@ public class Run {
 
 	@Override
 	public String toString() {
-		return "Run a distance of " + this.distance + " meters, in " + this.duration + " seconds."
-				+ "\nThis equates to an average speed of " + this.speed;
+		return "Run of " + this.distance + " meters, in " + this.duration + " seconds, "
+				+ "speed: " + this.speed;
 	}
 }
