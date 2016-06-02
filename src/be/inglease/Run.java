@@ -7,18 +7,15 @@ public class Run {
 	private double speed;		
 	private Runner runner;
 	
-	public Run(int duration, int distance, Runner runner) {
-		this.duration = duration;
-		this.distance = distance;
-		this.runner = runner;
-		setSpeed(r -> ((double) this.distance / (double) this.duration) * 3.6); // In km/h
-	}
-	
 	public Run(int duration, int distance, Runner runner, RunCalculation calc) {
 		this.duration = duration;
 		this.distance = distance;
 		this.runner = runner;
-		this.speed = calc.speed(this);
+		setSpeed(calc);
+	}
+	
+	public Run(int duration, int distance, Runner runner) {
+		this(duration, distance, runner, r -> ((double) distance / (double) duration) * 3.6);
 	}
 	
 	public double setSpeed(RunCalculation calc) {

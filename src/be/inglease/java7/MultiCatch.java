@@ -1,6 +1,5 @@
 package be.inglease.java7;
 
-import java.util.Locale;
 import java.util.Random;
 
 public class MultiCatch {
