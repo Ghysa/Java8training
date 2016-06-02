@@ -97,5 +97,4 @@ public class RunData {
 		zoesRuns.add(new Run(3600, 10708, zoe));
 		return zoe;
 	}
-
 }
