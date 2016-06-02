@@ -1,8 +1,8 @@
 package be.inglease.java7;
 
-import java.util.Locale;
 import java.util.Random;
 
+@SuppressWarnings("Duplicates")
 public class MultiCatch {
 
 	public static void multiCatchJava7() throws FirstException, SecondException {
