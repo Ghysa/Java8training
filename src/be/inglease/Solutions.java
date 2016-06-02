@@ -20,6 +20,7 @@ public class Solutions {
 	public static int countFemaleRunners(List<Runner> runners) {
 		return (int) runners.stream().filter(runner -> runner.getGender() == Gender.FEMALE)
 							   		 .count();
+		// 2
 	}
 	
 	/**
@@ -28,15 +29,17 @@ public class Solutions {
 	public static double biggestRunner(List<Runner> runners) {
 		return runners.stream().mapToDouble(Runner::getHeight)
 							   .max().getAsDouble();
+		// 1.89
 	}
 	
 	/**
 	 * Find the youngest runner
 	 */
-	public static Runner oldestRunner(List<Runner> runners) {
+	public static Runner youngestRunner(List<Runner> runners) {
 		return runners.stream().sorted((runner1, runner2) -> runner2.getBirthDate().compareTo(runner1.getBirthDate()))
 							   .findFirst()
 							   .get();
+		// Zoe
 	}
 	
 	/**
@@ -46,6 +49,7 @@ public class Solutions {
 		return runners.stream().flatMap(r -> r.getRuns().stream())
 							   .mapToDouble(r -> r.getDistance() / 1000.0)
 							   .sum();
+		// 522.964
 	}
 	
 	/**
@@ -56,6 +60,7 @@ public class Solutions {
 							   .flatMap(r -> r.getRuns().stream())
 							   .mapToDouble(r -> r.getDistance() / 1000.0)
 							   .sum();
+		// 396.528
 	}
 	
 	/**
@@ -67,6 +72,7 @@ public class Solutions {
 							   .flatMap(r -> r.getRuns().stream())
 							   .mapToInt(r -> RunCalculation.calories(r, r.getRunner()))
 							   .sum();
+		// 4035
 	}
 	
 	/**
@@ -83,6 +89,11 @@ public class Solutions {
 						.peek(System.out::println)
 						.peek(run -> run.setSpeed(calc))
 						.forEach(System.out::println);
+//		Run of 13000 meters, in 3657 seconds, speed: 12.797374897456931
+//		Run of 13000 meters, in 3657 seconds, speed: 3.5548263604047032
+//		Run of 13000 meters, in 3779 seconds, speed: 12.384228631913205
+//		Run of 13000 meters, in 3779 seconds, speed: 3.440063508864779
+//		...
 	}
 	
 	/**
@@ -95,6 +106,7 @@ public class Solutions {
 							   .mapToDouble(Run::getSpeed)
 							   .max()
 							   .orElse(0.0);
+		// 11.739130434782608
 	}
 
 	/**
@@ -107,6 +119,7 @@ public class Solutions {
 							   .mapToDouble(Run::getSpeed)
 							   .average()
 							   .getAsDouble();
+		// 12.542413487284362
 	}
 	
 	/**
@@ -120,6 +133,7 @@ public class Solutions {
 							   .map(Runner::getName)
 							   .reduce((n1, n2) -> n1 + "#" + n2)
 							   .orElse("");
+		// Zoe#Jesus#Sophie#Tony#Sam
 	}
 
 	/**
@@ -129,6 +143,21 @@ public class Solutions {
 		return runners.stream().flatMap(r -> r.getRuns().stream())
 							   .filter(r -> r.getDuration() > 3600)
 							   .collect(Collectors.toList());
+//		Run of 13000 meters, in 3657 seconds, speed: 12.797374897456931
+//		Run of 13000 meters, in 3779 seconds, speed: 12.384228631913205
+//		Run of 13000 meters, in 3955 seconds, speed: 11.833122629582807
+//		Run of 19100 meters, in 5736 seconds, speed: 11.98744769874477
+//		Run of 19100 meters, in 5798 seconds, speed: 11.859261814418765
+//		Run of 19100 meters, in 5866 seconds, speed: 11.721786566655302
+//		Run of 22800 meters, in 6087 seconds, speed: 13.484475110892065
+//		Run of 22800 meters, in 5971 seconds, speed: 13.74644113213867
+//		Run of 22800 meters, in 6013 seconds, speed: 13.650424081157492
+//		Run of 15700 meters, in 4022 seconds, speed: 14.052710094480359
+//		Run of 15700 meters, in 4165 seconds, speed: 13.570228091236496
+//		Run of 15700 meters, in 4088 seconds, speed: 13.825831702544033
+//		Run of 30100 meters, in 8256 seconds, speed: 13.125
+//		Run of 30100 meters, in 8391 seconds, speed: 12.913836253128352
+//		Run of 30100 meters, in 8154 seconds, speed: 13.289183222958057
 	}
 
 	/**
@@ -138,6 +167,8 @@ public class Solutions {
 	 */
 	public static Map<LocalDateTime, String> getBirthDatesMap(List<Runner> runners) {
 		return runners.stream().collect(Collectors.toMap(Runner::getBirthDate, Runner::getName));
+		
+		// {1991-05-10T05:05:55=Sam, 1993-01-24T12:38:47=Zoe, 1983-09-12T22:32:02=Jesus, 1984-08-18T23:45:12=Sophie, 1976-04-19T08:51:24=Tony}
 	}
 
 	/**
@@ -148,6 +179,8 @@ public class Solutions {
 	 */
 	public static Map<Integer, List<Runner>> getRunnersMapWithBirthYearKey(List<Runner> runners) {
 		return runners.stream().collect(Collectors.groupingBy(r -> r.getBirthDate().getYear()));
+		
+		// {1984=[Sophie was born on 1984-08-18 is 1.63 meters big and weighs 61.9 kgs.], 1991=[Sam was born on 1991-05-10 is 1.73 meters big and weighs 75.0 kgs.], 1976=[Tony was born on 1976-04-19 is 1.89 meters big and weighs 72.4 kgs.], 1993=[Zoe was born on 1993-01-24 is 1.69 meters big and weighs 56.7 kgs.], 1983=[Jesus was born on 1983-09-12 is 1.71 meters big and weighs 61.8 kgs.]}
 	}
 
 	/**
@@ -168,5 +201,7 @@ public class Solutions {
 							a[1] += b[1];
 						});
 		return av[0] / av[1];
+		
+		// 11.621422222222225
 	}
 }
