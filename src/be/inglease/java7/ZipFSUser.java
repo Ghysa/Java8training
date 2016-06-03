@@ -24,7 +24,8 @@ public class ZipFSUser {
         try (FileSystem zipfs = FileSystems.newFileSystem(path, null)) {
             zipfs.getRootDirectories();
             Path pathInZipfile = zipfs.getPath("/text.txt");
-            System.out.println(Files.lines(pathInZipfile).collect(Collectors.joining("\n")));
+            System.out.println(Files.lines(pathInZipfile)
+            		.collect(Collectors.joining("\n")));
         }
     }
 
