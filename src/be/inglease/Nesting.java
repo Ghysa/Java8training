@@ -1,5 +1,7 @@
 package be.inglease;
 
+import java.util.Optional;
+
 public class Nesting {
 	
 	/*
@@ -14,7 +16,7 @@ public class Nesting {
 	 * Print out foo if it's not null
 	 */
 	public static void printFoo(Outer outer) {
-		
+
 	}
 	
 	/*
