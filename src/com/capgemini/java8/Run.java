@@ -1,4 +1,4 @@
-package be.inglease;
+package com.capgemini.java8;
 
 public class Run {
 

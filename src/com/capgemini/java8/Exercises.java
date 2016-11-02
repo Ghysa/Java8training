@@ -1,14 +1,14 @@
-package be.inglease;
+package com.capgemini.java8;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 import java.util.function.ObjDoubleConsumer;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
-
-import be.inglease.Runner.Gender;
 
 public class Exercises {
 	/**
@@ -17,35 +17,35 @@ public class Exercises {
 	public static int countFemaleRunners(List<Runner> runners) {
 		return 0;
 	}
-	
+
 	/**
 	 * Give the height of the biggest runner
 	 */
 	public static double biggestRunner(List<Runner> runners) {
 		return 0.0;
 	}
-	
+
 	/**
 	 * Find the youngest runner
 	 */
 	public static Runner oldestRunner(List<Runner> runners) {
 		return null;
 	}
-	
+
 	/**
 	 * Find the total distance of all the runners in km.
 	 */
 	public static double totalDistance(List<Runner> runners) {
 		return 0.0;
 	}
-	
+
 	/**
-	 * Find the total distance of all {@link Gender#MALE} the runners in km.
+	 * Find the total distance of all {@link Runner.Gender#MALE} the runners in km.
 	 */
 	public static double totalDistanceMales(List<Runner> runners) {
 		return 0.0;
 	}
-	
+
 	/**
 	 * Calculate the calories Jesus burned on all his runs.
 	 * (hint: RunCalculation has a static method.)
@@ -53,19 +53,19 @@ public class Exercises {
 	public static int calculateCaloriesJesus(List<Runner> runners) {
 		return 0;
 	}
-	
+
 	/**
 	 * Change the speed of all the runs to m/s.
 	 * Print all the runs before the change and after the change.
 	 * Use a method reference for the printing.
 	 * (hint: Run has a toString() method already.)
-	 * 
+	 *
 	 * This is a nice exercise to see in which order your stream gets parsed.
 	 */
 	public static void setSpeedToMeterPerSecond(List<Runner> runners) {
-		
+
 	}
-	
+
 	/**
 	 * Find the fastest female run that is longer than 5km
 	 */
@@ -79,11 +79,11 @@ public class Exercises {
 	public static double avgSpeedSam(List<Runner> runners) {
 		return 0.0;
 	}
-	
+
 	/**
 	 * @return a String with the names of all Runners separated with a '#'
 	 * sorted on their weight. (Print the runners to see you've sorted correctly.)
-	 * (hint: Use the reduce function.)
+	 * (hint: Use a collector)
 	 */
 	public static String namesOfRunners(List<Runner> runners) {
 		return null;
@@ -113,6 +113,17 @@ public class Exercises {
 	 */
 	public static Map<Integer, List<Runner>> getRunnersMapWithBirthYearKey(List<Runner> runners) {
 		return null;
+	}
+
+	/**
+	 * Now we want a map where we can get each runner by his/her name.
+	 * The name is unique for each runner
+	 * @return a Map:<br>
+	 * Key = Name<br>
+	 * Entry = Runner with this name
+	 */
+	public static Map<String, Runner> getRunnersMapByName(List<Runner> runners) {
+		return runners.stream().collect(Collectors.toMap(Runner::getName, Function.identity()));
 	}
 
 	/**

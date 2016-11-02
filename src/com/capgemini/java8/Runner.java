@@ -1,4 +1,4 @@
-package be.inglease;
+package com.capgemini.java8;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

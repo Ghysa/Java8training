@@ -1,11 +1,9 @@
-package be.inglease;
+package com.capgemini.java8;
 
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
-
-import be.inglease.Runner.Gender;
 
 public class RunData {
 	public static List<Runner> getRunnersList() {
@@ -19,7 +17,7 @@ public class RunData {
 	}
 	
 	private static Runner initSam() {
-		Runner sam = new Runner("Sam", 1.73, 75.0, Gender.MALE, LocalDateTime.of(1991, Month.MAY, 10, 5, 5, 55));		
+		Runner sam = new Runner("Sam", 1.73, 75.0, Runner.Gender.MALE, LocalDateTime.of(1991, Month.MAY, 10, 5, 5, 55));
 		List<Run> samsRuns = new ArrayList<>();
 		sam.setRuns(samsRuns);
 		samsRuns.add(new Run(3657, 13000, sam));
@@ -35,7 +33,7 @@ public class RunData {
 	}
 
 	private static Runner initTony() {
-		Runner tony = new Runner("Tony", 1.89, 72.4, Gender.MALE, LocalDateTime.of(1976, Month.APRIL, 19, 8, 51, 24));
+		Runner tony = new Runner("Tony", 1.89, 72.4, Runner.Gender.MALE, LocalDateTime.of(1976, Month.APRIL, 19, 8, 51, 24));
 		List<Run> tonysRuns = new ArrayList<>();
 		tony.setRuns(tonysRuns);
 		tonysRuns.add(new Run(6087, 22800, tony));
@@ -51,7 +49,7 @@ public class RunData {
 	}
 
 	private static Runner initJesus() {
-		Runner jesus = new Runner("Jesus", 1.71, 61.8, Gender.MALE, LocalDateTime.of(1983, Month.SEPTEMBER, 12, 22, 32, 2));
+		Runner jesus = new Runner("Jesus", 1.71, 61.8, Runner.Gender.MALE, LocalDateTime.of(1983, Month.SEPTEMBER, 12, 22, 32, 2));
 		List<Run> jesusRuns = new ArrayList<>();
 		jesus.setRuns(jesusRuns);
 		jesusRuns.add(new Run(1800, 5863, jesus));
@@ -67,7 +65,7 @@ public class RunData {
 	}
 	
 	private static Runner initSophie() {
-		Runner sophie = new Runner("Sophie", 1.63, 61.9, Gender.FEMALE, LocalDateTime.of(1984, Month.AUGUST, 18, 23, 45, 12));
+		Runner sophie = new Runner("Sophie", 1.63, 61.9, Runner.Gender.FEMALE, LocalDateTime.of(1984, Month.AUGUST, 18, 23, 45, 12));
 		List<Run> sophiesRuns = new ArrayList<>();
 		sophie.setRuns(sophiesRuns);
 		sophiesRuns.add(new Run(1601, 4400, sophie));
@@ -83,7 +81,7 @@ public class RunData {
 	}
 
 	private static Runner initZoe() {
-		Runner zoe = new Runner("Zoe", 1.69, 56.7, Gender.FEMALE, LocalDateTime.of(1993, Month.JANUARY, 24, 12, 38, 47));
+		Runner zoe = new Runner("Zoe", 1.69, 56.7, Runner.Gender.FEMALE, LocalDateTime.of(1993, Month.JANUARY, 24, 12, 38, 47));
 		List<Run> zoesRuns = new ArrayList<>();
 		zoe.setRuns(zoesRuns);
 		zoesRuns.add(new Run(1400, 4863, zoe));
