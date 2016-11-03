@@ -9,6 +9,8 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		List<Runner> runners = RunData.getRunnersList();
 
-		System.out.println(Exercises.namesOfRunners(runners));
+		Runner emily = Solutions.generateRunner(runners);
+		System.out.println(emily);
+		emily.getRuns().forEach(System.out::println);
 	}
 }
