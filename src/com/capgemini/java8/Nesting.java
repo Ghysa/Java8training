@@ -9,29 +9,28 @@ public class Nesting {
      * If it's null, return a default value.
      */
     public static String getFoo(Outer outer) {
-        return Optional.ofNullable(outer)
-                .map(Outer::getNested)
-                .map(Nested::getInner)
-                .map(Inner::getFoo)
-                .orElse("");
+        return null;
     }
 
     /*
      * Print out foo if it's not null
      */
     public static void printFoo(Outer outer) {
-        Optional.ofNullable(outer).ifPresent(System.out::println);
+        
     }
 
     /*
      * Throw an exception if foo is null
      */
     public static void throwFoo(Outer outer) throws Exception {
-        System.out.println(Optional.ofNullable(outer)
-                .map(Outer::getNested)
-                .map(Nested::getInner)
-                .map(Inner::getFoo)
-                .orElseThrow(() -> new NullPointerException("Foo is null")));
+        
+    }
+    
+    /*
+     * Print foo if foo is not empty
+     */
+    public static void filterFoo(Outer outer) {
+    	
     }
 }
 

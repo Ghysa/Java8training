@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
+import com.capgemini.java8.Runner.Gender;
+
 public class Exercises {
     /**
      * Count the number of female runners.
